@@ -11,7 +11,7 @@ import utilities.ExcelUtility;
 
 public class ManageNewsTest extends Base
 {
-	@Test(groups= {"regression"})
+	@Test(groups= {"regression"},description="To add a new news ")
 	public void manageNews() throws IOException
 	{
 		/*String news="New news is added";
@@ -30,9 +30,9 @@ public class ManageNewsTest extends Base
 		managenews.enterTheNews(news);
 		managenews.clickSaveButton();
 		boolean alertdisplayed=managenews.isAlertDisplayed();
-		Assert.assertTrue(alertdisplayed);
+		Assert.assertTrue(alertdisplayed,"After saving new news alert is not displayed");
 	}
-	@Test
+	@Test(description="To update a news")
 	public void newsUpdate() throws IOException
 	{
 		/*String news="This is the updated news";
@@ -51,7 +51,7 @@ public class ManageNewsTest extends Base
 		managenewspage.enterUpdatedNews(news);
 		managenewspage.clickTheUpdateButton();
 		boolean alertdisplayed=managenewspage.isAlertDisplayed();
-		Assert.assertTrue(alertdisplayed);
+		Assert.assertTrue(alertdisplayed,"After updating news alert is not displayed");
 	}
 	
 }

@@ -12,7 +12,7 @@ import utilities.FakerUtility;
 
 public class AdminUserTest extends Base
 {
-	@Test
+	@Test(description="To create new Admin User Informations")
 	public void addAdminUserInformations() throws IOException
 	{
 		String user=ExcelUtility.getStringData(1, 0,"LoginPage");
@@ -34,6 +34,6 @@ public class AdminUserTest extends Base
 		adminpage.selectUserType();
 		adminpage.clickSaveButton();
 		boolean alertdisplayed=adminpage.isAlertDisplayed();
-		Assert.assertTrue(alertdisplayed);
+		Assert.assertTrue(alertdisplayed,"After saving new username and password alert is not displayed");
 	}
 }
